@@ -13,7 +13,7 @@ abstract class Animal {
 
     public void feed(FeedType feedType) {
         if (feedType == FeedType.HAY){
-            this.hungerLevel == Math.max(0, this.hungerLevel - 3);
+            this.hungerLevel = Math.max(0, this.hungerLevel - 3);
         } else if (feedType == FeedType.GRAIN) {
             this.hungerLevel = Math.max(0, this.hungerLevel - 2);
         }

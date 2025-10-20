@@ -16,6 +16,6 @@ class MarketService {
     }
 
     public static int getFeedPrice(FeedType feedType) {
-        return feedPrices.getOrDefault(feedType, 0)
+        return feedPrices.getOrDefault(feedType, 0);
     }
 }

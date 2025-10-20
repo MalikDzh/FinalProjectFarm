@@ -25,7 +25,32 @@ class Farm {
     }
 
     public void feedAnimals(FeedType feedType) {
+        for (Animal animal : animals) {
+            animal.feed(feedType);
+        }
+    }
 
+    public void collectionProducts() {
+        for (Animal animal : animals) {
+            ProductBundle product = animal.produce();
+            addProductToStorage(product.getProductType(), product.getQuantity());
+        }
+    }
+
+    public void showFarmStatus() {
+        System.out.println("Баланс: " + balance + " сом");
+        System.out.println("Животные:");
+        for (Animal animal : animals) {
+            System.out.println("- " + animal.getName() + ", " + animal.getAge() + " лет, голод: " + animal.getHungerLevel());
+        }
+        System.out.println("Продукция на складе:");
+        for (Map.Entry<ProductType, Integer> entry : storage.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+
+    public int getBalance() {
+        return balance;
     }
 
 

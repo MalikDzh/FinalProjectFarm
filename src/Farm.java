@@ -16,7 +16,7 @@ class Farm {
     public void sellProduct(ProductType productType) {
         int quantity = storage.getOrDefault(productType, 0);
         if (quantity > 0) {
-            int price = MArketService.getPriductPrice(productType);
+            int price = MarketService.getProductPrice(productType);
             balance += price * quantity;
             storage.put(productType, 0);
         } else {

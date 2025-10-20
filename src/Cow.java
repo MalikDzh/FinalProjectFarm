@@ -6,8 +6,8 @@ class Cow extends Animal {
     @Override
     public ProductBundle produce() {
         if (this.hungerLevel < 5) {
-            return new ProductBundle(ProductType.Milk, 0);
+            return new ProductBundle(ProductType.MILK, 0);
         }
-        return new ProductBundle(ProductType.Milk, 1);
+        return new ProductBundle(ProductType.MILK, 1);
     }
 }
